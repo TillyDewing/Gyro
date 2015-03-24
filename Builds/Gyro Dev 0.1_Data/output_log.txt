@@ -1,0 +1,27 @@
+Initialize engine version: 5.0.0f4 (5b98b70ebeb9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 660 Ti (ID=0x1183)
+    Vendor:   NVIDIA
+    VRAM:     1989 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Will\Documents\Rotator\Builds\Gyro Dev 0.1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Will\Documents\Rotator\Builds\Gyro Dev 0.1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Will\Documents\Rotator\Builds\Gyro Dev 0.1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Will\Documents\Rotator\Builds\Gyro Dev 0.1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Will\Documents\Rotator\Builds\Gyro Dev 0.1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Will\Documents\Rotator\Builds\Gyro Dev 0.1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.118 seconds
+desktop: 1920x1080 60Hz; virtual: 3360x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Will\Documents\Rotator\Builds\Gyro Dev 0.1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Will\Documents\Rotator\Builds\Gyro Dev 0.1_Data\Managed\System.dll (this message is harmless)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.376479 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 283.
+Total: 0.205096 ms (FindLiveObjects: 0.023122 ms CreateObjectMapping: 0.010209 ms MarkObjects: 0.161554 ms  DeleteObjects: 0.009008 ms)
+
