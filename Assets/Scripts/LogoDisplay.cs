@@ -13,7 +13,7 @@ public class LogoDisplay : MonoBehaviour
 
 		if(elapsedTime > time)
 		{
-			Destroy (gameObject);
+			Application.LoadLevel (1);
 		}
 	}
 }

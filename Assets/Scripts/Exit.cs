@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Exit : MonoBehaviour 
 {
-	public int level;
+	public int levelToLoad;
 	public bool open;
 
 	public GameObject EnterIcon;
@@ -11,9 +11,55 @@ public class Exit : MonoBehaviour
 
 	public LevelLoader loaderController;
 
+	public int world;
+	public int level;
+
+
+	public bool levelExit;
+	public int unlockWorld;
+	public int unlockLevel;
+
+	private SaveContoller saveController;
+
 	void Start()
 	{
 		loaderController = GameObject.FindGameObjectWithTag ("LevelController").GetComponent<LevelLoader> ();
+		saveController = GameObject.FindGameObjectWithTag ("SaveController").GetComponent<SaveContoller> ();
+	}
+
+	void Update()
+	{
+		if(!levelExit)
+		{
+			if(world > saveController.world)
+			{
+				open = false;
+			}
+			else if(world == saveController.world)
+			{
+				if(level > saveController.level)
+				{
+					open = false;
+				}
+			}
+			else
+			{
+				open = true;
+			}
+		}
+
+
+
+
+
+		if(!open) //check if locked then set icon acordinly
+		{
+			LockedIcon.SetActive (true);
+		}
+		else
+		{
+			LockedIcon.SetActive (false);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -26,7 +72,7 @@ public class Exit : MonoBehaviour
 
 				if(Input.GetKeyDown(KeyCode.Space))
 				{
-					loaderController.LoadLevel (level);
+					loaderController.LoadLevel (levelToLoad);
 				}
 			}
 			else
@@ -43,7 +89,23 @@ public class Exit : MonoBehaviour
 			{
 				if(Input.GetKeyDown(KeyCode.Return))
 				{
-					loaderController.LoadLevel (level);
+					
+					if(levelExit)	//Checks if it is a level exit and saves
+					{
+						if(unlockWorld > saveController.world)
+						{
+							saveController.world = unlockWorld;
+						}
+						if(unlockLevel > saveController.level)
+						{
+							saveController.level = unlockLevel;
+						}
+
+						saveController.Save ();
+					}
+
+					loaderController.LoadLevel (levelToLoad);
+
 				}
 			}
 		}
@@ -57,15 +119,5 @@ public class Exit : MonoBehaviour
 			EnterIcon.SetActive (false);
 		}
 	}
-	void Update()
-	{
-		if(!open)
-		{
-			LockedIcon.SetActive (true);
-		}
-		else
-		{
-			LockedIcon.SetActive (false);
-		}
-	}
+
 }
