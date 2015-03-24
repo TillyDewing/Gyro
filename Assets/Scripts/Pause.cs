@@ -6,7 +6,12 @@ public class Pause : MonoBehaviour
 	public GameObject pauseMenu;
 	public LevelLoader loader;
 	private bool paused;
-	private
+
+	void Start()
+	{
+		loader = GameObject.FindGameObjectWithTag ("LevelController").GetComponent<LevelLoader>();
+	}
+
 	void Update()
 	{
 		if(Input.GetKeyDown (KeyCode.Escape))
@@ -43,7 +48,7 @@ public class Pause : MonoBehaviour
 		Cursor.visible = true;
 		pauseMenu.SetActive (false);
 		
-		loader.LoadLevel (0);
+		loader.LoadLevel (1);
 
 	}
 
