@@ -4,3 +4,4 @@
 -built saving / loading system
 -added level progression
 -added button to clear saves on main menu (Temporary will be moved somewhere else later)
+-completly changed the movement system now using a modifyed version of unity's 2d player controller (Didn't want to set up the animator
